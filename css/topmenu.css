@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* * { outline: 1px solid red;} */
+    
+body{
+  margin: 0px;
+  font-family: 'Nanum Myeongjo', serif;
+}
+a{
+  color:white;
+  text-decoration: none;
+}
+ul{
+  list-style-type: none;
+  
+}
+.navbar{
+  background-color:darkslateblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  
+}
+.navbar .navbar-logo,
+.navbar .navbar-menu,
+.navbar .navbar-sns{
+  display: flex;
+}
+.navbar > .navbar-logo > li{
+  font-size: 1.5em;
+  color:white;
+  padding: 0 15px;
+}
+.navbar > .navbar-logo > li:hover{
+  font-size: 3em;
+  transition:0.5s;
+}
+.navbar .navbar-sns > li {
+  padding: 0 15px;
+}
+
+/*GNB 메뉴*/
+.navbar .navbar-menu li{
+  padding: 8px 12px;
+}
+.navbar .navbar-menu li:hover{
+  background-color: thistle;
+  font-size: 1.5em;
+  transition:1s;
+}
+
+
+.navbar #hamburger{
+  display: none;
+  position:absolute;
+  top:20px; right:20px;
+}
+@media screen and (max-width:767px){
+  .navbar,
+  .navbar .navbar-menu {
+    flex-direction: column;
+  }
+  .navbar #hamburger{
+    display: block;
+  }
+  .navbar .navbar-menu,
+  .navbar .navbar-sns{
+    display: none;
+  }
+  .navbar .navbar-logo{
+    align-self: flex-start;
+  }
+  .navbar .navbar-logo.active{
+    align-self: center;
+  }
+  .navbar .navbar-menu.active,
+  .navbar .navbar-sns.active{
+    display: flex;
+  }      
+}
